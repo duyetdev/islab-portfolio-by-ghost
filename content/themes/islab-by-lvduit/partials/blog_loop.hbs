@@ -1,0 +1,23 @@
+{{! This is the post loop - each post will be output using this markup }}
+{{#foreach posts}}
+{{^has tag="project"}}
+<!-- BEGAIN SINGLE BLOG -->
+<div class="col-lg-4 col-md-4 col-sm-4">
+  <div class="single_post wow fadeInUp">
+    {{#if image}}
+    <div class="blog_img">
+      <img src="{{image}}" alt="img">
+    </div>
+    {{/if}}
+    <h3>{{{title}}}</h3>
+    <div class="post_commentbox">
+      <a href="#"><i class="fa fa-user"></i>{{author.name}}</a>
+      <span><i class="fa fa-calendar"></i>{{date format="DD MMMM YYYY"}}</span>
+      <a href="#"><i class="fa fa-tags"></i>{{tags prefix=" on "}}</a>
+    </div>
+    <p>{{excerpt words="26"}}</p>
+    <a href="{{url}}" class="read_more">Read More <i class="fa fa-angle-double-right">  </i></a>                   
+  </div>
+</div>
+{{/has}}
+{{/foreach}}

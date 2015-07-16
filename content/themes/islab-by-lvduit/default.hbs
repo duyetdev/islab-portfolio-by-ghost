@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {{! Document Settings }}
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    {{! Page Meta }}
+    <title>{{meta_title}}</title>
+    <meta name="description" content="{{meta_description}}" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="{{asset "favicon.ico"}}">
+
+    {{! Styles'n'Scripts }}
+    <link rel="stylesheet" type="text/css" href="{{asset "bower_components/bootstrap/dist/css/bootstrap.min.css"}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset "bower_components/fontawesome/css/font-awesome.min.css"}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset "bower_components/animate.css/animate.min.css"}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset "bower_components/slick-carousel/slick/slick.css"}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset "bower_components/circliful/css/jquery.circliful.css"}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset "bower_components/superslides/dist/stylesheets/superslides.css"}}" />
+
+    <link rel="stylesheet" type="text/css" href="{{asset "css/elastic_grid.css"}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset "css/default-theme.css"}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset "css/main.css"}}" />
+
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
+       <!-- Google fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Varela' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+
+    {{! Ghost outputs important style and meta data with this tag }}
+    {{ghost_head}}
+</head>
+<body class="{{body_class}} nav-closed">
+
+    <!-- BEGAIN PRELOADER -->
+    <div id="preloader">
+        <div id="status">&nbsp;</div>
+    </div>
+    <!-- END PRELOADER -->
+
+    <!-- SCROLL TOP BUTTON -->
+    <a class="scrollToTop" href="#"><i class="fa fa-angle-up"></i></a>
+    <!-- END SCROLL TOP BUTTON -->
+
+
+    <div class="site-wrapper">
+
+        {{! Everything else gets inserted here }}
+        {{{body}}}
+
+        <footer class="site-footer clearfix">
+            <section class="copyright"><a href="{{@blog.url}}">{{@blog.title}}</a> &copy; {{date format="YYYY"}}</section>
+            <section class="poweredby">Proudly published with <a href="https://ghost.org">Ghost</a></section>
+        </footer>
+
+    </div>
+
+    {{! Ghost outputs important scripts and data with this tag }}
+    {{ghost_foot}}
+
+    {{! The main JavaScript file for Casper }}
+    <script type="text/javascript" src="{{asset "js/jquery.fitvids.js"}}"></script>
+    <script type="text/javascript" src="{{asset "bower_components/bootstrap/dist/js/bootstrap.min.js"}}"></script>
+    <script type="text/javascript" src="{{asset "bower_components/modernizr/modernizr.js"}}"></script>
+    <script type="text/javascript" src="{{asset "bower_components/slick-carousel/slick/slick.min.js"}}"></script>
+    <script type="text/javascript" src="{{asset "bower_components/wow/dist/wow.min.js"}}"></script>
+    <script type="text/javascript" src="{{asset "bower_components/circliful/js/jquery.circliful.min.js"}}"></script>
+    <script type="text/javascript" src="{{asset "bower_components/superslides/dist/jquery.superslides.min.js"}}"></script>
+    <script type="text/javascript" src="{{asset "js/elastic_grid.min.js"}}"></script>
+    <script type="text/javascript" src="{{asset "js/index.js"}}"></script>
+    <script type="text/javascript">
+
+    $(function(){
+        $("#elastic_grid_demo").elastic_grid({  
+            'hoverDirection': true,
+            'hoverDelay': 0,
+            'hoverInverse': false,
+            'expandingSpeed': 500,
+            'expandingHeight': 500,
+            'items' : project_data || []
+        });
+    });
+    </script>
+</body>
+</html>
