@@ -31,7 +31,7 @@
   border: 2px solid #2da2c8;
 }
 .heading h2 {
-  border-bottom: 11px solid #2da2c8;
+  /*border-bottom: 4px solid #2da2c8; */
 }
 .panel-title a:hover{
 	color: #2da2c8;		
@@ -55,7 +55,7 @@
   background-color: #2da2c8;
 }
 .heading h3 {
-  border-bottom: 5px solid #2da2c8;
+  /* border-bottom: 5px solid #2da2c8; */
 }
 .fa-2x {
   color: #2da2c8;
